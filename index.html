@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -187,6 +188,96 @@ tbody tr:hover {
 </section>
 
 <section class="section-alt">
+  <h2>ICT SHSM Courses</h2>
+
+  <div class="card-grid">
+	<div class="card">
+      <h3>ICD2O – Grade 10 Digital Technology and Innovations</h3>
+      <p>Computer number systems, innovations, and coding in Python. Strongly recommended but not required for ICS3U.</p>
+    </div>
+    
+    <div class="card">
+      <h3>ICS3U – Grade 11 Computer Science</h3>
+      <p>Introduction to programming, problem solving, algorithms, and software development. Usually in Java.</p>
+    </div>
+
+    <div class="card">
+      <h3>ICS4U – Grade 12 Computer Science</h3>
+      <p>Advanced programming concepts, data structures, OOP, and software design. Usually in Java.</p>
+    </div>
+
+    <div class="card">
+      <h3>TEJ3M – Grade 11 Computer Technology</h3>
+      <p>Computer hardware, networking, operating systems, and electronics fundamentals.</p>
+    </div>
+
+    <div class="card">
+      <h3>TEJ4M – Grade 12 Computer Technology</h3>
+      <p>Advanced networking, PC repair, system configuration, and IT infrastructure.</p>
+    </div>
+
+    <div class="card">
+      <h3>TGI3M – Grade 11 Interactive New Media & Animation</h3>
+      <p>Digital animation, interactive media, motion graphics, and creative design tools.</p>
+    </div>
+
+    <div class="card">
+      <h3>TGI4M – Grade 12 Interactive New Media & Animation</h3>
+      <p>Advanced animation, digital effects, multimedia production, and creative workflows.</p>
+    </div>
+
+    <div class="card">
+      <h3>TGV3M – Grade 11 TV, Video & Media Production</h3>
+      <p>Video editing, camera operation, audio production, and media storytelling.</p>
+    </div>
+
+    <div class="card">
+      <h3>TGV4M – Grade 12 TV, Video & Media Production</h3>
+      <p>Advanced video production, studio workflows, broadcasting, and digital media creation.</p>
+    </div>
+
+    <div class="card">
+      <h3>Co-op (COOP2) – ICT Sector</h3>
+      <p>Two-credit co‑op placement in an ICT field such as programming, IT support, media, or networking.</p>
+    </div>
+	<br>
+	<p>All Grade 12 ICT courses may be used as one of 6 courses for university admissions.</p>
+  </div>
+</section>
+
+
+<section class="section-alt">
+  <h2>Program Requirements</h2>
+
+  <div class="card-grid">
+    <div class="card">
+      <h3>Requirement 1</h3>
+      <p>Placeholder text describing requirement 1.</p>
+    </div>
+
+    <div class="card">
+      <h3>Requirement 2</h3>
+      <p>Placeholder text describing requirement 2.</p>
+    </div>
+
+    <div class="card">
+      <h3>Requirement 3</h3>
+      <p>Placeholder text describing requirement 3.</p>
+    </div>
+
+    <div class="card">
+      <h3>Requirement 4</h3>
+      <p>Placeholder text describing requirement 4.</p>
+    </div>
+
+    <div class="card">
+      <h3>Requirement 5</h3>
+      <p>Placeholder text describing requirement 5.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
   <h2>Binary Converter Challenge</h2>
   <p>You'll have to convert numbers into binary in ICD2O. Try a few rounds of these questions!</p>
 
@@ -210,12 +301,14 @@ tbody tr:hover {
 
 <section>
   <h2>ICT Career Randomizer</h2>
+  <p>Check out some inspiring post-secondary pathways!</p>
   <button class="secondary" id="careerBtn">Try your luck!</button>
   <p id="careerOut"></p>
 </section>
 
 <section class="section-alt">
-  <h2>Leaderboard</h2>
+  <h2>Binary Challenge Leaderboard</h2>
+  <p>Race to the top!</p>
   <button class="primary" id="refreshLB">Refresh</button>
 
   <table>
@@ -241,14 +334,48 @@ const client = window.supabase.createClient(
 
 // Careers
 const careers = [
-  "Software Developer",
-  "Network Technician",
-  "Game Developer",
-  "Web Designer",
-  "Cybersecurity Analyst",
-  "App Developer",
-  "Robotics Programmer"
+  {
+    name: "Software Developer",
+    desc: "Builds apps, websites, and tools using programming languages."
+  },
+  {
+    name: "Network Technician",
+    desc: "Sets up and maintains computer networks for schools and businesses."
+  },
+  {
+    name: "Game Developer",
+    desc: "Creates video games using engines like Unity or Unreal."
+  },
+  {
+    name: "Web Designer",
+    desc: "Designs modern, responsive websites with strong visuals."
+  },
+  {
+    name: "Cybersecurity Analyst",
+    desc: "Protects systems from hacking, malware, and security threats."
+  },
+  {
+    name: "App Developer",
+    desc: "Builds mobile apps for iOS and Android devices."
+  },
+  {
+    name: "Robotics Programmer",
+    desc: "Programs robots and automation systems used in industry."
+  },
+  {
+    name: "IT Support Specialist",
+    desc: "Helps people fix computer issues and manage technology."
+  },
+  {
+    name: "Data Analyst",
+    desc: "Uses data to find patterns, make predictions, and support decisions."
+  },
+  {
+    name: "Digital Media Producer",
+    desc: "Creates videos, graphics, and digital content for online platforms."
+  }
 ];
+
 
 // Random decimal
 function newDecimal(level) {
@@ -330,9 +457,11 @@ async function addPoint(name, pts) {
 // Career randomizer
 document.getElementById("careerBtn").onclick = () => {
   const out = document.getElementById("careerOut");
-  out.textContent = careers[Math.floor(Math.random() * careers.length)];
+  const pick = careers[Math.floor(Math.random() * careers.length)];
+  out.innerHTML = `<strong>${pick.name}</strong>: ${pick.desc}`;
   out.style.color = "#a29bfe";
 };
+
 
 // Leaderboard
 async function loadLeaderboard() {
