@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ICT SHSM at A.Y. Jackson — Build Your Future in Tech</title>
+<meta name="description" content="A simple guide to the ICT Specialist High Skills Major at A.Y. Jackson Secondary School: what it is, what you'll build, and how to get started." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- Reusable icon sprite. Keeps the visual language consistent without any external icon library. -->
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden;">
+  <defs>
+    <symbol id="icon-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="8 5 3 12 8 19"/><polyline points="16 5 21 12 16 19"/>
+    </symbol>
+    <symbol id="icon-palette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3c-4.97 0-9 3.58-9 8 0 3.5 2.5 6 6 6 .8 0 1.2-.5 1.2-1.1 0-.3-.1-.5-.3-.8-.2-.3-.3-.5-.3-.8 0-.6.5-1.1 1.1-1.1H12c3.3 0 6-2.24 6-5 0-2.76-2.69-5-6-5z"/>
+      <circle cx="7.5" cy="10.5" r="0.9" fill="currentColor" stroke="none"/><circle cx="10.7" cy="7.3" r="0.9" fill="currentColor" stroke="none"/>
+      <circle cx="14.5" cy="7.5" r="0.9" fill="currentColor" stroke="none"/><circle cx="16.6" cy="11" r="0.9" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="icon-media" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="4.5" width="18" height="15" rx="2.5"/><polygon points="10 9 16 12 10 15" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="icon-network" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="7.7" y1="7.5" x2="10.4" y2="16.1"/><line x1="16.3" y1="7.5" x2="13.6" y2="16.1"/><line x1="8.1" y1="6" x2="15.9" y2="6"/>
+      <circle cx="6" cy="6" r="2.3" fill="currentColor" stroke="none"/><circle cx="18" cy="6" r="2.3" fill="currentColor" stroke="none"/><circle cx="12" cy="18" r="2.3" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="icon-chip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="7" y="7" width="10" height="10" rx="1.4"/>
+      <line x1="9" y1="3" x2="9" y2="7"/><line x1="15" y1="3" x2="15" y2="7"/><line x1="9" y1="17" x2="9" y2="21"/><line x1="15" y1="17" x2="15" y2="21"/>
+      <line x1="3" y1="9" x2="7" y2="9"/><line x1="3" y1="15" x2="7" y2="15"/><line x1="17" y1="9" x2="21" y2="9"/><line x1="17" y1="15" x2="21" y2="15"/>
+    </symbol>
+    <symbol id="icon-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="12 3 21 8 12 13 3 8"/><polyline points="3 12 12 17 21 12"/><polyline points="3 16 12 21 21 16"/>
+    </symbol>
+    <symbol id="icon-ribbon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="8" r="5"/><polyline points="8.5 12.5 7 21 12 18 17 21 15.5 12.5"/>
+    </symbol>
+    <symbol id="icon-handshake" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 13l6-6 3 3-6 6z"/><path d="M21 13l-6-6-3 3 6 6z"/><circle cx="12" cy="13" r="1.3" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="icon-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2c3 2 5 6 5 10 0 1.5-.4 3-1 4l-1.5-1a6 6 0 0 0-5 0l-1.5 1c-.6-1-1-2.5-1-4 0-4 2-8 5-10z"/>
+      <circle cx="12" cy="10" r="1.5"/><path d="M9 16l-2 4 4-1"/><path d="M15 16l2 4-4-1"/>
+    </symbol>
+    <symbol id="icon-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="9"/><polygon points="15 9 13 13 9 15 11 11" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="icon-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="5" y1="3" x2="5" y2="21"/><path d="M5 4h13l-3 4 3 4H5z"/>
+    </symbol>
+    <symbol id="icon-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 4L2 9l10 5 10-5-10-5z"/><path d="M6 11.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5"/><line x1="22" y1="9" x2="22" y2="15"/>
+    </symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/>
+    </symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/>
+    </symbol>
+    <symbol id="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="site-header" id="top">
+  <div class="header-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">ICT SHSM <span class="brand-sub">A.Y. Jackson</span></span>
+    </a>
+
+    <nav class="primary-nav" id="primaryNav" aria-label="Main">
+      <a href="#what-is">What Is It?</a>
+      <a href="#components">The 5 Parts</a>
+      <a href="#capstone">Capstones</a>
+      <a href="#paths">Your Path</a>
+      <a href="#journey">The Journey</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="nav-cta">Get Started</a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Open menu">
+      <svg class="icon icon-open" width="24" height="24"><use href="#icon-menu"/></svg>
+      <svg class="icon icon-close" width="24" height="24"><use href="#icon-close"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="hero">
+    <div class="hero-signals" aria-hidden="true" id="heroSignals"></div>
+    <div class="hero-inner">
+      <p class="hero-context">A Ministry-recognized pathway at A.Y. Jackson Secondary School</p>
+      <h1 class="hero-title">Turn your curiosity about tech into a diploma seal, a portfolio, and a plan for what's next.</h1>
+      <p class="hero-sub">ICT SHSM takes the tech you're already curious about — coding, game design, media, networking, hardware — and builds it into your high school years. Real projects. Real mentors. A real head start.</p>
+      <div class="hero-actions">
+        <a href="#what-is" class="btn btn-primary">See how it works</a>
+        <a href="#contact" class="btn btn-ghost">Talk to a counsellor</a>
+      </div>
+      <ul class="hero-facts">
+        <li><span>5</span> program components</li>
+        <li><span>5</span> tech paths to explore</li>
+        <li><span>1</span> red seal on your diploma</li>
+      </ul>
+    </div>
+    <svg class="hero-circuit" viewBox="0 0 620 520" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+      <g class="circuit-lines" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path class="line-draw" d="M40 460 V300 H180" />
+        <path class="line-draw" d="M180 300 V140 H340" />
+        <path class="line-draw" d="M340 140 V40 H560" />
+        <path class="line-draw" d="M180 300 H420 V420" />
+        <path class="line-draw" d="M420 420 H540" />
+      </g>
+      <g class="circuit-nodes">
+        <circle cx="40" cy="460" r="6"/>
+        <circle cx="180" cy="300" r="9"/>
+        <circle cx="340" cy="140" r="6"/>
+        <circle cx="560" cy="40" r="9"/>
+        <circle cx="420" cy="420" r="6"/>
+        <circle cx="540" cy="420" r="9"/>
+      </g>
+      <g class="circuit-chips">
+        <g transform="translate(200, 278)">
+          <rect width="44" height="44" rx="10"/>
+          <use href="#icon-code" x="10" y="10" width="24" height="24"/>
+        </g>
+        <g transform="translate(360, 118)">
+          <rect width="44" height="44" rx="10"/>
+          <use href="#icon-media" x="10" y="10" width="24" height="24"/>
+        </g>
+        <g transform="translate(478, 18)">
+          <rect width="44" height="44" rx="10"/>
+          <use href="#icon-network" x="10" y="10" width="24" height="24"/>
+        </g>
+        <g transform="translate(440, 398)">
+          <rect width="44" height="44" rx="10"/>
+          <use href="#icon-chip" x="10" y="10" width="24" height="24"/>
+        </g>
+        <g transform="translate(560, 398)" class="chip-accent">
+          <rect width="44" height="44" rx="10"/>
+          <use href="#icon-palette" x="10" y="10" width="24" height="24"/>
+        </g>
+      </g>
+    </svg>
+  </section>
+
+  <!-- ===================== WHAT IS IT ===================== -->
+  <section class="section band-alt" id="what-is">
+    <div class="section-inner">
+      <div class="section-head">
+        <h2>What is ICT SHSM, really?</h2>
+        <p>Tap each card. It flips over to give you the short answer.</p>
+      </div>
+
+      <div class="flip-grid">
+        <button class="flip-card" data-flip type="button" aria-label="What it is — tap to flip">
+          <span class="flip-inner">
+            <span class="flip-face flip-front">
+              <span class="flip-index">01</span>
+              <span class="flip-title">What it is</span>
+              <span class="flip-hint">Tap to reveal</span>
+            </span>
+            <span class="flip-face flip-back">
+              <span class="flip-back-text">A Ministry-recognized specialization built right into your regular timetable — focused entirely on technology: coding, game design, media, networking, and hardware.</span>
+            </span>
+          </span>
+        </button>
+
+        <button class="flip-card" data-flip type="button" aria-label="Why it matters — tap to flip">
+          <span class="flip-inner">
+            <span class="flip-face flip-front">
+              <span class="flip-index">02</span>
+              <span class="flip-title">Why it matters</span>
+              <span class="flip-hint">Tap to reveal</span>
+            </span>
+            <span class="flip-face flip-back">
+              <span class="flip-back-text">Finish the program and a red seal is added to your Ontario diploma. Colleges, universities, and employers recognize it — and it can unlock scholarships made only for SHSM grads.</span>
+            </span>
+          </span>
+        </button>
+
+        <button class="flip-card" data-flip type="button" aria-label="Who it's for — tap to flip">
+          <span class="flip-inner">
+            <span class="flip-face flip-front">
+              <span class="flip-index">03</span>
+              <span class="flip-title">Who it's for</span>
+              <span class="flip-hint">Tap to reveal</span>
+            </span>
+            <span class="flip-face flip-back">
+              <span class="flip-back-text">Grade 8 students mapping out Grade 9, and Grade 9–10 students who want hands-on tech experience — whether you've written a line of code before or not.</span>
+            </span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 5 COMPONENTS WHEEL ===================== -->
+  <section class="section" id="components">
+    <div class="section-inner">
+      <div class="section-head">
+        <h2>The 5 parts you'll complete</h2>
+        <p>Finish all five and you earn the SHSM red seal. Pick a piece below to see what it involves.</p>
+      </div>
+
+      <div class="wheel-layout">
+        <div class="wheel" role="tablist" aria-label="ICT SHSM components">
+          <button class="wheel-btn active" data-component="bundle" role="tab" aria-selected="true">
+            <svg class="icon" width="20" height="20"><use href="#icon-layers"/></svg>
+            <span>Credit Bundle</span>
+          </button>
+          <button class="wheel-btn" data-component="certs" role="tab" aria-selected="false">
+            <svg class="icon" width="20" height="20"><use href="#icon-ribbon"/></svg>
+            <span>Certifications</span>
+          </button>
+          <button class="wheel-btn" data-component="spe" role="tab" aria-selected="false">
+            <svg class="icon" width="20" height="20"><use href="#icon-handshake"/></svg>
+            <span>Sector Experience</span>
+          </button>
+          <button class="wheel-btn" data-component="reach" role="tab" aria-selected="false">
+            <svg class="icon" width="20" height="20"><use href="#icon-rocket"/></svg>
+            <span>Reach Ahead</span>
+          </button>
+          <button class="wheel-btn" data-component="exp" role="tab" aria-selected="false">
+            <svg class="icon" width="20" height="20"><use href="#icon-compass"/></svg>
+            <span>Experiential Learning</span>
+          </button>
+
+          <div class="wheel-center">
+            <div class="wheel-panel active" id="panel-bundle" role="tabpanel">
+              <h3>Credit Bundle</h3>
+              <p>A set of tech-related courses — like computer science, communications tech, or design — that you take as part of your normal course load. Same credits, sharper focus.</p>
+            </div>
+            <div class="wheel-panel" id="panel-certs" role="tabpanel">
+              <h3>Certifications</h3>
+              <p>Industry-style certificates that prove you can use real tools and follow real standards. They're worth listing on a resume or a college application.</p>
+            </div>
+            <div class="wheel-panel" id="panel-spe" role="tabpanel">
+              <h3>Sector-Partnered Experience</h3>
+              <p>A hands-on project or placement with an actual tech partner, so you see how the skills you're learning get used outside the classroom.</p>
+            </div>
+            <div class="wheel-panel" id="panel-reach" role="tabpanel">
+              <h3>Reach Ahead</h3>
+              <p>A structured look at what's next — college programs, university options, or apprenticeships — so Grade 12 doesn't feel like a guessing game.</p>
+            </div>
+            <div class="wheel-panel" id="panel-exp" role="tabpanel">
+              <h3>Experiential Learning</h3>
+              <p>Workshops, field trips, and hands-on sessions that put tech in your hands early — including the trip that gets the most excitement: Ubisoft Toronto.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WHAT YOU GET / STATS ===================== -->
+  <section class="section band-alt" id="benefits">
+    <div class="section-inner">
+      <div class="section-head">
+        <h2>What you actually get out of it</h2>
+        <p>Beyond the diploma seal, here's what the program builds along the way.</p>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <svg class="icon icon-lg" width="28" height="28"><use href="#icon-code"/></svg>
+          <h3>Real tech skills</h3>
+          <p>Not theory-only — skills you actually use, in the same tools working professionals rely on.</p>
+        </div>
+        <div class="benefit-card">
+          <svg class="icon icon-lg" width="28" height="28"><use href="#icon-handshake"/></svg>
+          <h3>Industry mentorship</h3>
+          <p>Guidance from people working in tech right now, through your Sector-Partnered Experience and your capstone.</p>
+        </div>
+        <div class="benefit-card">
+          <svg class="icon icon-lg" width="28" height="28"><use href="#icon-flag"/></svg>
+          <h3>A portfolio-worthy capstone</h3>
+          <p>One personal passion project, built with mentorship, that you can actually show off afterward.</p>
+        </div>
+        <div class="benefit-card">
+          <svg class="icon icon-lg" width="28" height="28"><use href="#icon-compass"/></svg>
+          <h3>A clearer path forward</h3>
+          <p>A real look at careers and postsecondary options in tech, well before you have to decide anything.</p>
+        </div>
+        <div class="benefit-card benefit-highlight">
+          <svg class="icon icon-lg" width="28" height="28"><use href="#icon-media"/></svg>
+          <h3>Trips that don't feel like school</h3>
+          <p>Including a visit to <strong>Ubisoft Toronto</strong> — one of the most talked-about days in the program.</p>
+        </div>
+      </div>
+
+      <div class="stats-row" id="statsRow">
+        <div class="stat">
+          <span class="stat-number" data-count="5">0</span>
+          <span class="stat-label">components to complete</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-count="5">0</span>
+          <span class="stat-label">capstone project types</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-count="5">0</span>
+          <span class="stat-label">tech paths to explore</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-count="1">0</span>
+          <span class="stat-label">red seal on your OSSD</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CAPSTONE CHOOSER ===================== -->
+  <section class="section" id="capstone">
+    <div class="section-inner">
+      <div class="section-head">
+        <h2>Your capstone: one project, your call</h2>
+        <p>In Grade 11 or 12, you'll build one major project with mentorship. Pick a type to see what it could look like.</p>
+      </div>
+
+      <div class="capstone-layout">
+        <div class="capstone-tabs" role="tablist" aria-label="Capstone project types">
+          <button class="capstone-tab active" data-cap="app" role="tab" aria-selected="true">
+            <svg class="icon" width="18" height="18"><use href="#icon-code"/></svg> App
+          </button>
+          <button class="capstone-tab" data-cap="website" role="tab" aria-selected="false">
+            <svg class="icon" width="18" height="18"><use href="#icon-network"/></svg> Website
+          </button>
+          <button class="capstone-tab" data-cap="game" role="tab" aria-selected="false">
+            <svg class="icon" width="18" height="18"><use href="#icon-media"/></svg> Game
+          </button>
+          <button class="capstone-tab" data-cap="media" role="tab" aria-selected="false">
+            <svg class="icon" width="18" height="18"><use href="#icon-palette"/></svg> Media
+          </button>
+          <button class="capstone-tab" data-cap="hardware" role="tab" aria-selected="false">
+            <svg class="icon" width="18" height="18"><use href="#icon-chip"/></svg> Hardware
+          </button>
+        </div>
+
+        <div class="capstone-display">
+          <div class="capstone-shot" aria-hidden="true">
+            <svg width="48" height="48"><use href="#icon-code" id="capShotIcon"/></svg>
+            <span>Project preview</span>
+          </div>
+
+          <div class="capstone-panel active" id="cap-app" role="tabpanel">
+            <h3>Build an app</h3>
+            <p>Design and build something people would actually open — a study helper, a habit tracker, a school event app.</p>
+            <p class="what-you-learn">What you learn</p>
+            <ul><li>App design and basic user experience</li><li>Coding logic and problem-solving</li><li>Testing something real people use</li></ul>
+          </div>
+          <div class="capstone-panel" id="cap-website" role="tabpanel">
+            <h3>Build a website</h3>
+            <p>A site for a club, a cause, or your own portfolio — live, and yours to show off.</p>
+            <p class="what-you-learn">What you learn</p>
+            <ul><li>HTML, CSS, and basic JavaScript</li><li>Layout, accessibility, and design</li><li>Publishing something to the real web</li></ul>
+          </div>
+          <div class="capstone-panel" id="cap-game" role="tabpanel">
+            <h3>Design a game</h3>
+            <p>A small puzzle, platformer, or strategy game — built, tested, and playable by your classmates.</p>
+            <p class="what-you-learn">What you learn</p>
+            <ul><li>Game logic and interaction design</li><li>Level and mechanic design</li><li>Player feedback and iteration</li></ul>
+          </div>
+          <div class="capstone-panel" id="cap-media" role="tabpanel">
+            <h3>Produce a media project</h3>
+            <p>A video, a digital art series, or interactive media about something you actually care about.</p>
+            <p class="what-you-learn">What you learn</p>
+            <ul><li>Storytelling and visual design</li><li>Editing and media tools</li><li>Sharing work with a real audience</li></ul>
+          </div>
+          <div class="capstone-panel" id="cap-hardware" role="tabpanel">
+            <h3>Build a hardware project</h3>
+            <p>Sensors, small electronics, or a simple robot — something that exists in the physical world, not just on a screen.</p>
+            <p class="what-you-learn">What you learn</p>
+            <ul><li>Basic circuits and wiring</li><li>Coding paired with physical devices</li><li>Troubleshooting something real</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CHOOSE YOUR PATH ===================== -->
+  <section class="section band-alt" id="paths">
+    <div class="section-inner">
+      <div class="section-head">
+        <h2>Choose your path</h2>
+        <p>Not sure which part of tech is "you" yet? Pick what sounds interesting and see where it leads.</p>
+      </div>
+
+      <div class="paths-layout">
+        <div class="paths-tabs" role="tablist" aria-label="Tech paths">
+          <button class="path-tab active" data-path="coding" role="tab" aria-selected="true">
+            <svg class="icon" width="20" height="20"><use href="#icon-code"/></svg><span>Coding</span>
+          </button>
+          <button class="path-tab" data-path="design" role="tab" aria-selected="false">
+            <svg class="icon" width="20" height="20"><use href="#icon-palette"/></svg><span>Design</span>
+          </button>
+          <button class="path-tab" data-path="media" role="tab" aria-selected="false">
+            <svg class="icon" width="20" height="20"><use href="#icon-media"/></svg><span>Media</span>
+          </button>
+          <button class="path-tab" data-path="networking" role="tab" aria-selected="false">
+            <svg class="icon" width="20" height="20"><use href="#icon-network"/></svg><span>Networking</span>
+          </button>
+          <button class="path-tab" data-path="hardware" role="tab" aria-selected="false">
+            <svg class="icon" width="20" height="20"><use href="#icon-chip"/></svg><span>Hardware</span>
+          </button>
+        </div>
+
+        <div class="paths-panel">
+          <div class="path-card active" id="path-coding" role="tabpanel">
+            <h3>Coding</h3>
+            <p>You like figuring out how things work, then making them work better.</p>
+            <div class="path-cols">
+              <div><p class="path-col-label">Might lead to</p><p>Software developer, game programmer, data analyst</p></div>
+              <div><p class="path-col-label">You could build</p><p>Apps, websites, tools, games</p></div>
+              <div><p class="path-col-label">Skills to earn</p><p>Programming certifications, project portfolios</p></div>
+            </div>
+          </div>
+          <div class="path-card" id="path-design" role="tabpanel">
+            <h3>Design</h3>
+            <p>You notice when something looks or feels off — and you know how to fix it.</p>
+            <div class="path-cols">
+              <div><p class="path-col-label">Might lead to</p><p>UX designer, graphic designer, product designer</p></div>
+              <div><p class="path-col-label">You could build</p><p>Interfaces, layouts, brand visuals</p></div>
+              <div><p class="path-col-label">Skills to earn</p><p>Design software certifications, a visual portfolio</p></div>
+            </div>
+          </div>
+          <div class="path-card" id="path-media" role="tabpanel">
+            <h3>Media</h3>
+            <p>You'd rather tell the story than just describe it.</p>
+            <div class="path-cols">
+              <div><p class="path-col-label">Might lead to</p><p>Content creator, media producer, digital storyteller</p></div>
+              <div><p class="path-col-label">You could build</p><p>Video series, digital art, interactive stories</p></div>
+              <div><p class="path-col-label">Skills to earn</p><p>Editing certifications, a demo reel</p></div>
+            </div>
+          </div>
+          <div class="path-card" id="path-networking" role="tabpanel">
+            <h3>Networking</h3>
+            <p>You want to know how everything actually connects — and stays safe.</p>
+            <div class="path-cols">
+              <div><p class="path-col-label">Might lead to</p><p>Network technician, IT support, cybersecurity</p></div>
+              <div><p class="path-col-label">You could build</p><p>Small networks, basic security setups</p></div>
+              <div><p class="path-col-label">Skills to earn</p><p>Networking certifications, hands-on labs</p></div>
+            </div>
+          </div>
+          <div class="path-card" id="path-hardware" role="tabpanel">
+            <h3>Hardware</h3>
+            <p>You want to build things you can actually hold.</p>
+            <div class="path-cols">
+              <div><p class="path-col-label">Might lead to</p><p>Hardware technician, robotics, embedded systems</p></div>
+              <div><p class="path-col-label">You could build</p><p>Robots, controllers, custom devices</p></div>
+              <div><p class="path-col-label">Skills to earn</p><p>Hardware certifications, a working prototype</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== JOURNEY SCROLL STORY ===================== -->
+  <section class="section" id="journey">
+    <div class="section-inner">
+      <div class="section-head">
+        <h2>A taste of the journey</h2>
+        <p>Here's roughly how it unfolds, year to year.</p>
+      </div>
+
+      <ol class="journey-list">
+        <li class="journey-step">
+          <span class="journey-num">1</span>
+          <div class="journey-body">
+            <h3>Discover your interest</h3>
+            <p>You join ICT SHSM and start your credit bundle — the courses feel like your regular timetable, just aimed at tech you actually like.</p>
+          </div>
+        </li>
+        <li class="journey-step">
+          <span class="journey-num">2</span>
+          <div class="journey-body">
+            <h3>Earn your certifications</h3>
+            <p>Along the way, you pick up industry-style certificates — proof you can use real tools, not just talk about them.</p>
+          </div>
+        </li>
+        <li class="journey-step">
+          <span class="journey-num">3</span>
+          <div class="journey-body">
+            <h3>Get mentorship</h3>
+            <p>Through your Sector-Partnered Experience, you work alongside people in the tech industry — not just your teachers.</p>
+          </div>
+        </li>
+        <li class="journey-step">
+          <span class="journey-num">4</span>
+          <div class="journey-body">
+            <h3>Build your capstone</h3>
+            <p>You take on a personal passion project — an app, a game, a media piece, whatever fits — with mentors guiding you along the way.</p>
+          </div>
+        </li>
+        <li class="journey-step">
+          <span class="journey-num">5</span>
+          <div class="journey-body">
+            <h3>Go on a tech field trip</h3>
+            <p>Experiential learning includes trips like a visit to Ubisoft Toronto — seeing a real studio, not just reading about one.</p>
+          </div>
+        </li>
+        <li class="journey-step">
+          <span class="journey-num">6</span>
+          <div class="journey-body">
+            <h3>Celebrate the milestones</h3>
+            <p>Some moments deserve more than a checkmark — like your Capstone Completion Experience and the Grade 12 Year-End Celebration.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===================== MILESTONE BADGES ===================== -->
+  <section class="section band-alt" id="milestones">
+    <div class="section-inner">
+      <div class="section-head">
+        <h2>Milestones you'll actually earn</h2>
+        <p>Hover a badge for a glow. Tap it to see what it means.</p>
+      </div>
+
+      <div class="badge-grid">
+        <button class="badge-card" data-badge type="button">
+          <svg class="icon icon-lg" width="26" height="26"><use href="#icon-flag"/></svg>
+          <h3>Capstone Completed</h3>
+          <p class="badge-detail">You planned, built, and presented a real project from start to finish.</p>
+        </button>
+        <button class="badge-card" data-badge type="button">
+          <svg class="icon icon-lg" width="26" height="26"><use href="#icon-ribbon"/></svg>
+          <h3>Certifications Earned</h3>
+          <p class="badge-detail">You collected industry-style certificates that back up your skills.</p>
+        </button>
+        <button class="badge-card" data-badge type="button">
+          <svg class="icon icon-lg" width="26" height="26"><use href="#icon-handshake"/></svg>
+          <h3>Sector Experience Done</h3>
+          <p class="badge-detail">You worked with a real industry partner on a real challenge.</p>
+        </button>
+        <button class="badge-card" data-badge type="button">
+          <svg class="icon icon-lg" width="26" height="26"><use href="#icon-rocket"/></svg>
+          <h3>Reach Ahead Complete</h3>
+          <p class="badge-detail">You explored what comes after high school before you had to decide.</p>
+        </button>
+        <button class="badge-card" data-badge type="button">
+          <svg class="icon icon-lg" width="26" height="26"><use href="#icon-cap"/></svg>
+          <h3>SHSM Graduate</h3>
+          <p class="badge-detail">You finished all five components and earned the red seal on your diploma.</p>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FAQ ===================== -->
+  <section class="section" id="faq">
+    <div class="section-inner section-inner-narrow">
+      <div class="section-head">
+        <h2>Questions parents and students ask</h2>
+      </div>
+
+      <div class="accordion">
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span>Does this cost anything?</span>
+            <svg class="icon icon-chevron" width="20" height="20"><use href="#icon-chevron"/></svg>
+          </button>
+          <div class="accordion-panel">
+            <p>There's no extra tuition to join ICT SHSM. A few activities or certifications may carry a small fee, but the school typically covers or supports these.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span>Do I need to already know how to code?</span>
+            <svg class="icon icon-chevron" width="20" height="20"><use href="#icon-chevron"/></svg>
+          </button>
+          <div class="accordion-panel">
+            <p>No. Curiosity and a willingness to try matter far more than experience walking in.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span>How much extra work is it?</span>
+            <svg class="icon icon-chevron" width="20" height="20"><use href="#icon-chevron"/></svg>
+          </button>
+          <div class="accordion-panel">
+            <p>ICT SHSM runs inside your regular course load. There's more going on — certifications, experiences, a capstone — but it's paced and supported so it stays meaningful, not overwhelming.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span>Can I still take other courses I enjoy?</span>
+            <svg class="icon icon-chevron" width="20" height="20"><use href="#icon-chevron"/></svg>
+          </button>
+          <div class="accordion-panel">
+            <p>Yes. You still earn your full Ontario Secondary School Diploma and can take electives in the arts, sports, or anything else you're into.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section class="section band-alt" id="contact">
+    <div class="section-inner">
+      <div class="contact-layout">
+        <div class="contact-copy">
+          <h2>Ready to find out more?</h2>
+          <p>If you're a Grade 8 student choosing your Grade 9 pathway, or a Grade 9–10 student thinking ahead, start with a conversation.</p>
+          <p>Talk to your guidance counsellor or the ICT SHSM lead teacher at A.Y. Jackson — they can walk you through how it fits your timetable and your plans.</p>
+          <a href="mailto:shsm-ict@ayjackson.tdsb.on.ca" class="btn btn-primary">Email the SHSM team</a>
+        </div>
+        <div class="contact-card">
+          <h3>Reach us</h3>
+          <p><strong>Email</strong><br>shsm-ict@ayjackson.tdsb.on.ca</p>
+          <p><strong>Phone</strong><br>(416) 395-3210</p>
+          <p><strong>Office</strong><br>Student Services, A.Y. Jackson S.S.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>ICT Specialist High Skills Major — A.Y. Jackson Secondary School, TDSB.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
