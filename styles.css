@@ -81,10 +81,6 @@ body.modal-open { overflow: hidden; }
   mask-image: linear-gradient(to bottom, transparent, #000 8%, #000 92%, transparent);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .site-signals { background-position: 0 0 !important; }
-}
-
 h1, h2, h3 {
   font-family: var(--font-head);
   color: var(--ink);
