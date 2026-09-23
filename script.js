@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initStatCounters();
   initJourneyReveal();
   initHeroParallax();
+  initSiteSignals();
+  initPreviewModal();
 });
 
 /* ---------- Mobile nav ---------- */
@@ -211,6 +213,85 @@ function initJourneyReveal() {
   steps.forEach((step) => observer.observe(step));
 }
 
+/* ---------- Site-wide background signal grid ----------
+   Purely decorative: pointer-events is set in CSS and it sits
+   behind everything with a negative z-index, so it can never
+   intercept a click or break layout. It only ever reads scroll
+   position — it never listens for clicks/taps itself. */
+function initSiteSignals() {
+  const layer = document.getElementById("siteSignals");
+  if (!layer) return;
+
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (prefersReducedMotion) return;
+
+  let ticking = false;
+
+  window.addEventListener("scroll", () => {
+    if (ticking) return;
+    ticking = true;
+
+    requestAnimationFrame(() => {
+      const shift = window.scrollY * 0.04;
+      layer.style.backgroundPosition = `0 ${-shift}px, 0 ${-shift}px`;
+      ticking = false;
+    });
+  });
+}
+
+/* ---------- Capstone preview modal ----------
+   Empty container for now — real screenshots/video get dropped
+   into #previewModalBody later. Closes via X, backdrop, or Escape. */
+function initPreviewModal() {
+  const modal = document.getElementById("previewModal");
+  if (!modal) return;
+
+  const titleEl = document.getElementById("previewModalTitle");
+  const bodyEl = document.getElementById("previewModalBody");
+  let lastTrigger = null;
+
+  const typeLabels = {
+    app: "App preview",
+    website: "Website preview",
+    game: "Game preview",
+    media: "Media project preview",
+    hardware: "Hardware project preview",
+  };
+
+  function openModal(type, triggerEl) {
+    lastTrigger = triggerEl || null;
+    titleEl.textContent = typeLabels[type] || "Project preview";
+    bodyEl.innerHTML = ""; // No content yet — wire in real media here later.
+    modal.classList.add("open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+    modal.querySelector(".preview-modal-close").focus();
+  }
+
+  function closeModal() {
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+    if (lastTrigger) lastTrigger.focus();
+  }
+
+  document.querySelectorAll("[data-preview-trigger]").forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      const activeTab = document.querySelector(".capstone-tab.active");
+      const type = activeTab ? activeTab.dataset.cap : "app";
+      openModal(type, trigger);
+    });
+  });
+
+  modal.querySelectorAll("[data-modal-close]").forEach((el) => {
+    el.addEventListener("click", closeModal);
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("open")) closeModal();
+  });
+}
+
 /* ---------- Subtle hero "tech signals" parallax ---------- */
 function initHeroParallax() {
   const layer = document.getElementById("heroSignals");
@@ -237,3 +318,31 @@ function initHeroParallax() {
     });
   });
 }
+
+/* ---------- Showcase Image Carousel ---------- */
+function initShowcaseCarousel() {
+  const imgEl = document.getElementById("showcaseImg");
+  const prevBtn = document.querySelector(".carousel-prev");
+  const nextBtn = document.querySelector(".carousel-next");
+
+  if (!imgEl || !prevBtn || !nextBtn) return;
+
+  // List all your image URLs or file paths here; use width 16:height 9
+  const images = [
+    "https://u.cubeupload.com/219847/looknohands.png",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBomjdYkbdba6DBmhUiOKcDItPJKCryGGgeCyKt3NVvw&s=10" // Put your second image path or URL here
+  ];
+
+  let currentIndex = 0;
+
+  function updateImage(index) {
+    currentIndex = (index + images.length) % images.length;
+    imgEl.src = images[currentIndex];
+  }
+
+  prevBtn.addEventListener("click", () => updateImage(currentIndex - 1));
+  nextBtn.addEventListener("click", () => updateImage(currentIndex + 1));
+}
+
+// Initialize when the page loads
+document.addEventListener("DOMContentLoaded", initShowcaseCarousel);
