@@ -8,9 +8,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+<!-- Fixed, decorative, non-interactive background layer. pointer-events:none
+     and a negative z-index keep it from ever intercepting clicks or taps. -->
+<div class="site-signals" id="siteSignals" aria-hidden="true"></div>
 
 <!-- Reusable icon sprite. Keeps the visual language consistent without any external icon library. -->
 <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden;">
@@ -72,14 +76,25 @@
 <header class="site-header" id="top">
   <div class="header-inner">
     <a class="brand" href="#top">
-      <span class="brand-mark" aria-hidden="true"></span>
+      <img src="https://u.cubeupload.com/219847/ictshsm.jpg" alt="ICT SHSM Logo" class="brand-logo" width="42" height="42" />
       <span class="brand-text">ICT SHSM <span class="brand-sub">A.Y. Jackson</span></span>
     </a>
 
     <nav class="primary-nav" id="primaryNav" aria-label="Main">
-      <a href="#what-is">What Is It?</a>
-      <a href="#components">The 5 Parts</a>
-      <a href="#capstone">Capstones</a>
+      <!-- Dropdown Group for Program Details -->
+      <div class="nav-dropdown">
+        <button class="dropdown-toggle" aria-expanded="false">
+          Program Info
+          <svg class="icon icon-chevron" width="16" height="16"><use href="#icon-chevron"/></svg>
+        </button>
+        <div class="dropdown-menu">
+          <a href="#what-is">What Is It?</a>
+          <a href="#components">The 5 Parts</a>
+          <a href="#capstone">Capstones</a>
+        </div>
+      </div>
+
+      <a href="#showcase">Gallery</a>
       <a href="#paths">Your Path</a>
       <a href="#journey">The Journey</a>
       <a href="#faq">FAQ</a>
@@ -101,6 +116,10 @@
     <div class="hero-inner">
       <p class="hero-context">A Ministry-recognized pathway at A.Y. Jackson Secondary School</p>
       <h1 class="hero-title">Turn your curiosity about tech into a diploma seal, a portfolio, and a plan for what's next.</h1>
+      <div style="display: flex; align-items: center; justify-content: left; gap: 1rem; margin: 1.5rem 0;">
+  <img src="https://u.cubeupload.com/219847/shsmlogo.png" alt="Ontario SHSM Red Seal" style="height: 64px; width: auto;" />
+  <span style="font-weight: 600; font-size: 0.95rem; max-width: 280px; text-align: left;">Earn the official Red Seal embossed on your High School Diploma</span>
+</div>
       <p class="hero-sub">ICT SHSM takes the tech you're already curious about — coding, game design, media, networking, hardware — and builds it into your high school years. Real projects. Real mentors. A real head start.</p>
       <div class="hero-actions">
         <a href="#what-is" class="btn btn-primary">See how it works</a>
@@ -152,6 +171,7 @@
       </g>
     </svg>
   </section>
+  
 
   <!-- ===================== WHAT IS IT ===================== -->
   <section class="section band-alt" id="what-is">
@@ -200,6 +220,37 @@
             </span>
           </span>
         </button>
+      </div>
+    </div>
+  </section>
+  
+  <!-- ===================== GALLERY / SHOWCASE ===================== -->
+<section class="section showcase-section" id="showcase">
+    <div class="section-inner showcase-layout">
+      <div class="showcase-copy">
+        <p class="showcase-context">A.Y. Jackson Secondary School</p>
+        <h2 class="showcase-heading">Launch Your Tech Career. <br><span class="highlight-red">Graduate With Advantage.</span></h2>
+        
+        <p class="showcase-text">
+          The Information & Communications Technology SHSM equips students with practical projects, real-world certifications, and specialized training to stand out in post-secondary applications and industry pathways.
+        </p>
+        <div class="showcase-actions">
+          <a href="#contact" class="btn btn-primary">Explore The Program</a>
+        </div>
+      </div>
+
+      <div class="showcase-media">
+        <div class="carousel-container">
+          <button class="carousel-arrow carousel-prev" aria-label="Previous image">
+            <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          
+          <img id="showcaseImg" src="https://u.cubeupload.com/219847/looknohands.png" alt="ICT SHSM showcase image" class="showcase-img" />
+
+          <button class="carousel-arrow carousel-next" aria-label="Next image">
+            <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -317,6 +368,11 @@
         </div>
       </div>
     </div>
+    <div>
+    <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin: 1.5rem 0;">
+  <img src="https://u.cubeupload.com/219847/shsmlogo.png" alt="Ontario SHSM Red Seal" style="height: 96px; width: auto;" />
+  <span style="font-weight: 600; font-size: 0.95rem; max-width: 280px; text-align: left;">Earn the official Red Seal embossed on your High School Diploma</span>
+</div>
   </section>
 
   <!-- ===================== CAPSTONE CHOOSER ===================== -->
@@ -347,10 +403,10 @@
         </div>
 
         <div class="capstone-display">
-          <div class="capstone-shot" aria-hidden="true">
+          <button class="capstone-shot" data-preview-trigger type="button" aria-haspopup="dialog">
             <svg width="48" height="48"><use href="#icon-code" id="capShotIcon"/></svg>
-            <span>Project preview</span>
-          </div>
+            <span>Tap to preview</span>
+          </button>
 
           <div class="capstone-panel active" id="cap-app" role="tabpanel">
             <h3>Build an app</h3>
@@ -630,8 +686,23 @@
 </main>
 
 <footer class="site-footer">
+  <img src="https://u.cubeupload.com/219847/ictshsm.jpg" alt="ICT SHSM Logo" class="brand-logo" width="42" height="42" />
   <p>ICT Specialist High Skills Major — A.Y. Jackson Secondary School, TDSB.</p>
 </footer>
+
+<!-- Reusable preview modal. Triggers set the title/content; empty until real
+     media is wired in. Close via the X, the backdrop, or Escape. -->
+<div class="preview-modal" id="previewModal" aria-hidden="true">
+  <div class="preview-modal-backdrop" data-modal-close></div>
+  <div class="preview-modal-box" role="dialog" aria-modal="true" aria-labelledby="previewModalTitle">
+    <button class="preview-modal-close" data-modal-close type="button" aria-label="Close preview">
+      <svg class="icon" width="20" height="20"><use href="#icon-close"/></svg>
+    </button>
+    <p class="preview-modal-eyebrow">Preview</p>
+    <h3 id="previewModalTitle">Project preview</h3>
+    <div class="preview-modal-body" id="previewModalBody"></div>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
