@@ -4,20 +4,7 @@
    the rest of the page.
 ============================================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
-  initNavToggle();
-  initFlipCards();
-  initWheel();
-  initCapstoneTabs();
-  initPathTabs();
-  initAccordion();
-  initBadgeReveal();
-  initStatCounters();
-  initJourneyReveal();
-  initHeroParallax();
-  initSiteSignals();
-  initPreviewModal();
-});
+
 
 /* ---------- Mobile nav ---------- */
 function initNavToggle() {
@@ -346,3 +333,44 @@ function initShowcaseCarousel() {
 
 // Initialize when the page loads
 document.addEventListener("DOMContentLoaded", initShowcaseCarousel);
+document.addEventListener("DOMContentLoaded", () => {
+  initNavToggle();
+  initFlipCards();
+  initWheel();
+  initCapstoneTabs();
+  initPathTabs();
+  initAccordion();
+  initBadgeReveal();
+  initStatCounters();
+  initJourneyReveal();
+  initHeroParallax();
+  initSiteSignals();
+  initPreviewModal();
+  initUniversityCarousel(); // <-- add this line
+});
+
+
+/* ---------- University recognition marquee ----------
+   To add a university, just add another { name, logo, url } object.
+   The list is rendered twice back-to-back so the CSS animation
+   (translateX(-50%)) can loop seamlessly forever. */
+const universityPartners = [
+  { name: "University of Toronto", logo: "https://example.com/logos/uoft.png", url: "https://www.utoronto.ca/" },
+  { name: "York University", logo: "https://example.com/logos/york.png", url: "https://www.yorku.ca/" },
+  { name: "Toronto Metropolitan University", logo: "https://example.com/logos/tmu.png", url: "https://www.torontomu.ca/" },
+  { name: "University of Waterloo", logo: "https://example.com/logos/waterloo.png", url: "https://uwaterloo.ca/" },
+  { name: "Seneca Polytechnic", logo: "https://example.com/logos/seneca.png", url: "https://www.senecapolytechnic.ca/" },
+];
+
+function initUniversityCarousel() {
+  const track = document.getElementById("uniTrack");
+  if (!track) return;
+
+  const logoHtml = (u) => `
+    <a class="uni-logo" href="${u.url}" target="_blank" rel="noopener noreferrer" aria-label="${u.name} — opens in a new tab">
+      <img src="${u.logo}" alt="${u.name} logo" loading="lazy" />
+    </a>`;
+
+  // Duplicate the whole list once so translateX(-50%) loops seamlessly.
+  track.innerHTML = universityPartners.map(logoHtml).join("") + universityPartners.map(logoHtml).join("");
+}
