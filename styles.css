@@ -1296,3 +1296,106 @@ img, svg { display: block; max-width: 100%; }
 @media (max-width: 640px) {
   .uni-logo { width: 120px; height: 74px; padding: 0.75rem; }
 }
+/* ===================== Courses ===================== */
+.course-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.course-group-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.course-group-note {
+  margin-top: 0.9rem;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.9rem;
+}
+
+.course-chip {
+  position: relative;
+  text-align: left;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+
+.course-chip:hover,
+.course-chip:focus-visible {
+  border-color: var(--teal);
+  box-shadow: 0 6px 16px rgba(22, 36, 28, 0.08);
+}
+
+.course-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.course-code {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--teal-deep);
+}
+
+.course-grade {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+.course-name {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+/* Tooltip: hidden by default, fades in on hover/focus, fades back out
+   the moment the pointer/focus leaves — no click needed, no lingering popup. */
+.course-tooltip {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(100% + 8px);
+  background: var(--ink);
+  color: #fff;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  padding: 0.75rem 0.9rem;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 10px 24px rgba(22, 36, 28, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(4px);
+  transition: opacity 0.18s var(--ease), transform 0.18s var(--ease), visibility 0.18s;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.course-chip:hover .course-tooltip,
+.course-chip:focus-visible .course-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+@media (max-width: 640px) {
+  .course-grid { grid-template-columns: 1fr; }
+}
