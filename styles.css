@@ -330,6 +330,44 @@ img, svg { display: block; max-width: 100%; }
 .circuit-chips .chip-accent rect { stroke: var(--orange); }
 .circuit-chips .chip-accent use { color: var(--orange-deep); }
 
+/* Hero chips are real links into "Choose your path" below, not just
+   decoration — label is visible by default so the diagram reads as
+   information, and brightens further on hover/focus. */
+.hero-node { cursor: pointer; }
+
+.hero-node rect {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 0.2s var(--ease), stroke-width 0.2s var(--ease);
+}
+
+.hero-node:hover rect,
+.hero-node:focus-visible rect {
+  transform: scale(1.14);
+  stroke-width: 2.5;
+}
+
+.hero-node-label {
+  font-family: var(--font-head);
+  font-size: 15px;
+  font-weight: 700;
+  fill: var(--ink-soft);
+  transition: fill 0.2s var(--ease);
+}
+
+.hero-node:hover .hero-node-label,
+.hero-node:focus-visible .hero-node-label {
+  fill: var(--ink);
+}
+
+.hero-node:focus-visible {
+  outline: none;
+}
+
+.hero-node:focus-visible rect {
+  stroke: var(--orange);
+}
+
 .line-draw {
   stroke-dasharray: 620;
   stroke-dashoffset: 620;
