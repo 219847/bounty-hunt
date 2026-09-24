@@ -133,15 +133,15 @@
         <li><span>1</span> red seal on your diploma</li>
       </ul>
     </div>
-    <svg class="hero-circuit" viewBox="0 0 620 520" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
-      <g class="circuit-lines" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+    <svg class="hero-circuit" viewBox="0 0 620 520" preserveAspectRatio="xMidYMid meet">
+      <g class="circuit-lines" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
         <path class="line-draw" d="M40 460 V300 H180" />
         <path class="line-draw" d="M180 300 V140 H340" />
         <path class="line-draw" d="M340 140 V40 H560" />
         <path class="line-draw" d="M180 300 H420 V420" />
         <path class="line-draw" d="M420 420 H540" />
       </g>
-      <g class="circuit-nodes">
+      <g class="circuit-nodes" aria-hidden="true">
         <circle cx="40" cy="460" r="6"/>
         <circle cx="180" cy="300" r="9"/>
         <circle cx="340" cy="140" r="6"/>
@@ -149,27 +149,45 @@
         <circle cx="420" cy="420" r="6"/>
         <circle cx="540" cy="420" r="9"/>
       </g>
+      <!-- Each chip is a real link into the matching tab in "Choose your
+           path" below — the 5 things named in the hero copy, made clickable
+           instead of just decorative. -->
       <g class="circuit-chips">
-        <g transform="translate(200, 278)">
-          <rect width="44" height="44" rx="10"/>
-          <use href="#icon-code" x="10" y="10" width="24" height="24"/>
-        </g>
-        <g transform="translate(360, 118)">
-          <rect width="44" height="44" rx="10"/>
-          <use href="#icon-media" x="10" y="10" width="24" height="24"/>
-        </g>
-        <g transform="translate(478, 18)">
-          <rect width="44" height="44" rx="10"/>
-          <use href="#icon-network" x="10" y="10" width="24" height="24"/>
-        </g>
-        <g transform="translate(440, 398)">
-          <rect width="44" height="44" rx="10"/>
-          <use href="#icon-chip" x="10" y="10" width="24" height="24"/>
-        </g>
-        <g transform="translate(560, 398)" class="chip-accent">
-          <rect width="44" height="44" rx="10"/>
-          <use href="#icon-palette" x="10" y="10" width="24" height="24"/>
-        </g>
+        <a href="#paths" class="hero-node" data-path="coding" aria-label="Coding — jump to the Coding path">
+          <g transform="translate(200, 278)">
+            <rect width="44" height="44" rx="10"/>
+            <use href="#icon-code" x="10" y="10" width="24" height="24"/>
+            <text x="22" y="62" text-anchor="middle" class="hero-node-label">Coding</text>
+          </g>
+        </a>
+        <a href="#paths" class="hero-node" data-path="media" aria-label="Media — jump to the Media path">
+          <g transform="translate(360, 118)">
+            <rect width="44" height="44" rx="10"/>
+            <use href="#icon-media" x="10" y="10" width="24" height="24"/>
+            <text x="22" y="62" text-anchor="middle" class="hero-node-label">Media</text>
+          </g>
+        </a>
+        <a href="#paths" class="hero-node" data-path="networking" aria-label="Networking — jump to the Networking path">
+          <g transform="translate(478, 18)">
+            <rect width="44" height="44" rx="10"/>
+            <use href="#icon-network" x="10" y="10" width="24" height="24"/>
+            <text x="22" y="62" text-anchor="middle" class="hero-node-label">Networking</text>
+          </g>
+        </a>
+        <a href="#paths" class="hero-node" data-path="hardware" aria-label="Hardware — jump to the Hardware path">
+          <g transform="translate(440, 398)">
+            <rect width="44" height="44" rx="10"/>
+            <use href="#icon-chip" x="10" y="10" width="24" height="24"/>
+            <text x="22" y="62" text-anchor="middle" class="hero-node-label">Hardware</text>
+          </g>
+        </a>
+        <a href="#paths" class="hero-node" data-path="design" aria-label="Design — jump to the Design path">
+          <g transform="translate(560, 398)" class="chip-accent">
+            <rect width="44" height="44" rx="10"/>
+            <use href="#icon-palette" x="10" y="10" width="24" height="24"/>
+            <text x="22" y="62" text-anchor="middle" class="hero-node-label">Design</text>
+          </g>
+        </a>
       </g>
     </svg>
   </section>
