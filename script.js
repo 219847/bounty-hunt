@@ -114,22 +114,6 @@ function initPathTabs() {
   });
 }
 
-/* ---------- Hero circuit chips → Choose Your Path ----------
-   Each labeled chip in the hero graphic is a real link (href="#paths")
-   so it still works with JS disabled. On top of that, clicking one also
-   pre-selects the matching tab in the Choose Your Path section below,
-   so "Networking" in the hero actually opens the Networking path card
-   instead of just scrolling to a generic tab list. */
-function initHeroNodes() {
-  document.querySelectorAll(".hero-node").forEach((node) => {
-    node.addEventListener("click", () => {
-      const target = node.dataset.path;
-      const tab = document.querySelector(`.path-tab[data-path="${target}"]`);
-      if (tab) tab.click();
-    });
-  });
-}
-
 /* ---------- FAQ accordion ---------- */
 function initAccordion() {
   document.querySelectorAll(".accordion-trigger").forEach((trigger) => {
@@ -353,7 +337,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initNavToggle();
   initFlipCards();
   initWheel();
-  initHeroNodes();
   initCapstoneTabs();
   initPathTabs();
   initAccordion();
