@@ -1160,8 +1160,8 @@ img, svg { display: block; max-width: 100%; }
 }
 
 .brand-logo {
-  width: 52px;          /* Adjusted width for top bar fit */
-  height: 52px;         /* Max height that fits within top bar without pushing it taller */
+  width: 64px;          /* Adjusted width for top bar fit */
+  height: 64px;         /* Max height that fits within top bar without pushing it taller */
   object-fit: contain;   /* Ensures the logo scales down cleanly without cropping */
   border-radius: 6px;
   flex-shrink: 0;
