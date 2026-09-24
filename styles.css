@@ -330,42 +330,50 @@ img, svg { display: block; max-width: 100%; }
 .circuit-chips .chip-accent rect { stroke: var(--orange); }
 .circuit-chips .chip-accent use { color: var(--orange-deep); }
 
-/* Hero chips are real links into "Choose your path" below, not just
-   decoration — label is visible by default so the diagram reads as
-   information, and brightens further on hover/focus. */
-.hero-node { cursor: pointer; }
+/* Hero image chain — a real chain of images (placeholders for now)
+   strung along the circuit lines, one per thing named in the hero copy.
+   Swap the placeholder <img> src attributes in the HTML for real
+   photos/screenshots whenever you have them; nothing else needs to change. */
+.hero-circuit-wrap { position: relative; }
 
-.hero-node rect {
-  transform-box: fill-box;
-  transform-origin: center;
-  transition: transform 0.2s var(--ease), stroke-width 0.2s var(--ease);
+.hero-chain {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.hero-node:hover rect,
-.hero-node:focus-visible rect {
-  transform: scale(1.14);
-  stroke-width: 2.5;
+.chain-node {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
 }
 
-.hero-node-label {
+.chain-node-img {
+  width: clamp(52px, 9vw, 84px);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 3px solid var(--surface);
+  box-shadow: 0 8px 20px rgba(22, 36, 28, 0.18);
+}
+
+.chain-node-accent .chain-node-img { border-color: var(--orange); }
+
+.chain-node-label {
   font-family: var(--font-head);
-  font-size: 15px;
+  font-size: 0.72rem;
   font-weight: 700;
-  fill: var(--ink-soft);
-  transition: fill 0.2s var(--ease);
-}
-
-.hero-node:hover .hero-node-label,
-.hero-node:focus-visible .hero-node-label {
-  fill: var(--ink);
-}
-
-.hero-node:focus-visible {
-  outline: none;
-}
-
-.hero-node:focus-visible rect {
-  stroke: var(--orange);
+  color: var(--ink);
+  background: var(--surface);
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(22, 36, 28, 0.12);
+  white-space: nowrap;
 }
 
 .line-draw {
@@ -1020,7 +1028,7 @@ img, svg { display: block; max-width: 100%; }
 
 @media (max-width: 980px) {
   .hero { grid-template-columns: 1fr; }
-  .hero-circuit { max-width: 420px; margin: 0 auto; }
+  .hero-circuit-wrap { max-width: 420px; margin: 0 auto; }
   .hero-signals { inset: -10%; }
 
   .primary-nav {
