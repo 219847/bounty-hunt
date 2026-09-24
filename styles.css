@@ -147,7 +147,7 @@ img, svg { display: block; max-width: 100%; }
   text-decoration: none;
   font-family: var(--font-head);
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 1.35rem; /* Increased text title size (was 1.05rem) */
 }
 
 .brand-mark {
@@ -1160,9 +1160,9 @@ img, svg { display: block; max-width: 100%; }
 }
 
 .brand-logo {
-  width: 66px;
-  height: 66px;
-  object-fit: contain;
+  width: 52px;          /* Adjusted width for top bar fit */
+  height: 52px;         /* Max height that fits within top bar without pushing it taller */
+  object-fit: contain;   /* Ensures the logo scales down cleanly without cropping */
   border-radius: 6px;
   flex-shrink: 0;
 }
